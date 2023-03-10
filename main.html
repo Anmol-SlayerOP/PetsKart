@@ -1,253 +1,248 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <title>Title</title>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    </style>
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+
+<head>
+  <title>Title</title>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  </style>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-    <!-- Bootstrap CSS -->
-   
-    <style> 
-    .card-deck{
-        padding:10px;
-        margin: 5px;
-    }
-    .btn{
-        scale: 1.11;
-        transition-duration: 0.5s;
-    }
-img:hover{
-    scale: 1.1;
-    transition-duration: 0.4s;
-}
-.card{
-  min-width: 300px;
-}
-body{
-  background-image: linear-gradient(to bottom right, #37D5D6, #36096D);
-}
-a.btn:hover{
-  scale:1.2;
-  transition: 0.4s;
-}
+  <!-- Bootstrap CSS -->
 
-    </style>
-    
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    
+  <style>
+    .card-deck {
+      padding: 10px;
+      margin: 5px;
+    }
+
+    .btn {
+      scale: 1.11;
+      transition-duration: 0.5s;
+    }
+
+    img:hover {
+      scale: 1.1;
+      transition-duration: 0.4s;
+    }
+
+    .card {
+      min-width: 300px;
+    }
+
+    body {
+      background-image: linear-gradient(to bottom right, #37D5D6, #36096D);
+    }
+
+    a.btn:hover {
+      scale: 1.2;
+      transition: 0.4s;
+    }
+  </style>
+
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
 </head>
-  <body>
+
+<body>
 
 
-<!-- The Modal -->
-<div class="modal" id="myModal">
-  <div class="modal-dialog">
-    <div class="modal-content">
+  <!-- The Modal -->
+  <div class="modal" id="myModal">
+    <div class="modal-dialog">
+      <div class="modal-content">
 
-      <!-- Modal Header -->
-      <div class="modal-header">
-        <h4 class="modal-title">Confirm Adoption</h4>
-        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <!-- Modal Header -->
+        <div class="modal-header">
+          <h4 class="modal-title">Confirm Adoption</h4>
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+        </div>
+
+        <!-- Modal body -->
+        <div class="modal-body ">
+          <img id="modalimg" src="" style="height: 150px; align-self: center;">
+
+          <p id="animal" style="font-size:30px"></p>
+          <form id="popover-form" action="#">
+            <div class="form-group">
+              <label for="exampleInputEmail1">Email address</label>
+              <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+                placeholder="Enter email">
+              <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+            </div>
+            <div class="form-group">
+              <label for="InputPassword">Password</label>
+              <input type="password" class="form-control" id="InputPassword" placeholder="Password">
+            </div>
+            <div class="form-check">
+              <input type="checkbox" class="form-check-input" id="Check">
+              <label class="form-check-label" for="Check">Check me out</label>
+            </div>
+            <button type="submit" class="btn btn-primary" data-toggle="modal" data-target="#myModal">Submit</button>
+          </form>
+
+        </div>
+
+        <!-- Modal footer -->
+        <div class="modal-footer">
+          <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+        </div>
+
       </div>
-
-      <!-- Modal body -->
-      <div class="modal-body ">
-        <img id="modalimg" src="" style="height: 150px; align-self: center;">
-
-        <p id="animal" style="font-size:30px" ></p>
-        <form id="popover-form" action="#">
-          <div class="form-group">
-            <label for="exampleInputEmail1">Email address</label>
-            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
-            <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
-          </div>
-          <div class="form-group">
-            <label for="InputPassword">Password</label>
-            <input type="password" class="form-control" id="InputPassword" placeholder="Password">
-          </div>
-          <div class="form-check">
-            <input type="checkbox" class="form-check-input" id="Check">
-            <label class="form-check-label" for="Check">Check me out</label>
-          </div>
-          <button type="submit" class="btn btn-primary" data-toggle="modal" data-target="#myModal">Submit</button>
-        </form>
-
-      </div>
-
-      <!-- Modal footer -->
-      <div class="modal-footer">
-        <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
-      </div>
-
     </div>
   </div>
-</div>
-
-    
-    <!-- <div style="margin-top: 90px;">
-      <a href="#" data-toggle="popover" title="Popover Header" data-content="Some content inside the popover">Toggle popover</a>
-     
-    </div> -->
-
-    <!-- ########################################################################################## -->
-    <div class="container" style="padding: 20px; margin-top:80px">
 
 
-        <div class="card-deck" style="padding:5px ;">
-        <div class="card  pet" >
-          <img class="card-img-top" src="images/German-Shepherd.jpg" alt="Card image" style="width:100%">
-          <div class="card-body">
-            <h4 class="card-title">German Shepherd</h4>
-            <a href="#" class="btn btn-primary" data-toggle="modal" data-target="#myModal">Adopt</a>
-          </div>
+  <!-- ########################################################################################## -->
+  <div class="container" style="padding: 20px; margin-top:80px">
+
+
+    <div class="card-deck" style="padding:5px ;">
+      <div class="card  pet">
+        <img class="card-img-top" src="images/German-Shepherd.jpg" alt="Card image" style="width:100%">
+        <div class="card-body">
+          <h4 class="card-title">German Shepherd</h4>
+          <a href="#" class="btn btn-primary" data-toggle="modal" data-target="#myModal">Adopt</a>
         </div>
-        <br>
-        
-
-        <div class="card  pet" >
-          <div class="card-body">
-            <h4 class="card-title">Eskimo</h4>
-            <a href="#" class="btn btn-primary" data-toggle="modal" data-target="#myModal">Adopt</a>
-          </div>
-          <img class="card-img-bottom" src="images/Eskimo.jpg" alt="Card image" style="width:100%">
-        </div>
-      
+      </div>
       <br>
-     
-        <div class="card  pet" >
-          <img class="card-img-top" src="images/GoldenRetriever.jpeg" alt="Card image" style="width:100%">
-          <div class="card-body">
-            <h4 class="card-title">Golden Retriever</h4>
-            <a href="#" class="btn btn-primary" data-toggle="modal" data-target="#myModal">Adopt</a>
-          </div>
-        </div>
-        <br>
 
-        <div class="card  pet" >
-            <div class="card-body">
-              <h4 class="card-title">Beagle</h4>
-              <a href="#" class="btn btn-primary" data-toggle="modal" data-target="#myModal">Adopt</a>
-            </div>
-            <img class="card-img-bottom" src="images/beagle.jpg" alt="Card image" style="width:100%">
-          </div>
-        
-        <br>
+
+      <div class="card  pet">
+        <div class="card-body">
+          <h4 class="card-title">Eskimo</h4>
+          <a href="#" class="btn btn-primary" data-toggle="modal" data-target="#myModal">Adopt</a>
+        </div>
+        <img class="card-img-bottom" src="images/Eskimo.jpg" alt="Card image" style="width:100%">
+      </div>
+
+      <br>
+
+      <div class="card  pet">
+        <img class="card-img-top" src="images/GoldenRetriever.jpeg" alt="Card image" style="width:100%">
+        <div class="card-body">
+          <h4 class="card-title">Golden Retriever</h4>
+          <a href="#" class="btn btn-primary" data-toggle="modal" data-target="#myModal">Adopt</a>
+        </div>
+      </div>
+      <br>
+
+      <div class="card  pet">
+        <div class="card-body">
+          <h4 class="card-title">Beagle</h4>
+          <a href="#" class="btn btn-primary" data-toggle="modal" data-target="#myModal">Adopt</a>
+        </div>
+        <img class="card-img-bottom" src="images/beagle.jpg" alt="Card image" style="width:100%">
+      </div>
+
+      <br>
     </div>
     <br>
     <!-- Cats  .... -->
-    <div class="card-deck" >
-            <div class="card  pet" >
-              <img class="card-img-top" src="images/american-shorthair.jpg" alt="Card image" style="width:100%">
-              <div class="card-body">
-                <h4 class="card-title">American Shorthair</h4>
-                <a href="#" class="btn btn-primary" data-toggle="modal" data-target="#myModal">Adopt</a>
-              </div>
-            </div>
-            <br>
-            
-    
-            <div class="card  pet" >
-              <div class="card-body">
-                <h4 class="card-title">Persian Cat</h4>
-                <a href="#" class="btn btn-primary" data-toggle="modal" data-target="#myModal">Adopt</a>
-              </div>
-              <img class="card-img-bottom" src="images/persian-cat.jpg" alt="Card image" style="width:100%">
-            </div>
-          
-          <br>
-
-     
-        <div class="card  pet" >
-          <img class="card-img-top" src="images/exotic-shorthair.jpg" alt="Card image" style="width:100%">
-          <div class="card-body">
-            <h4 class="card-title">Exotic Shorthair</h4>
-            <a href="#" class="btn btn-primary" data-toggle="modal" data-target="#myModal">Adopt</a>
-          </div>
+    <div class="card-deck">
+      <div class="card  pet">
+        <img class="card-img-top" src="images/american-shorthair.jpg" alt="Card image" style="width:100%">
+        <div class="card-body">
+          <h4 class="card-title">American Shorthair</h4>
+          <a href="#" class="btn btn-primary" data-toggle="modal" data-target="#myModal">Adopt</a>
         </div>
-        <br>
+      </div>
+      <br>
 
-        <div class="card  pet" >
-            <div class="card-body">
-              <h4 class="card-title">Russian Blue</h4>
-              <a href="#" class="btn btn-primary" data-toggle="modal" data-target="#myModal">Adopt</a>
-            </div>
-            <img class="card-img-bottom" src="images/russian-blue.jpg" alt="Card image" style="width:100%">
-          </div>
-        
-        <br>
+
+      <div class="card  pet">
+        <div class="card-body">
+          <h4 class="card-title">Persian Cat</h4>
+          <a href="#" class="btn btn-primary" data-toggle="modal" data-target="#myModal">Adopt</a>
+        </div>
+        <img class="card-img-bottom" src="images/persian-cat.jpg" alt="Card image" style="width:100%">
+      </div>
+
+      <br>
+
+
+      <div class="card  pet">
+        <img class="card-img-top" src="images/exotic-shorthair.jpg" alt="Card image" style="width:100%">
+        <div class="card-body">
+          <h4 class="card-title">Exotic Shorthair</h4>
+          <a href="#" class="btn btn-primary" data-toggle="modal" data-target="#myModal">Adopt</a>
+        </div>
+      </div>
+      <br>
+
+      <div class="card  pet">
+        <div class="card-body">
+          <h4 class="card-title">Russian Blue</h4>
+          <a href="#" class="btn btn-primary" data-toggle="modal" data-target="#myModal">Adopt</a>
+        </div>
+        <img class="card-img-bottom" src="images/russian-blue.jpg" alt="Card image" style="width:100%">
+      </div>
+
+      <br>
     </div>
-    
+
     <br>
     <!-- Birds  .... -->
     <div class="card-deck">
-        <div class="card  pet" >
-          <img class="card-img-top" src="images/Amazon-parrots.jpg" alt="Card image" style="width:100%">
-          <div class="card-body">
-            <h4 class="card-title">Amazon Parrots</h4>
-            <a href="#" class="btn btn-primary" data-toggle="modal" data-target="#myModal">Adopt</a>
-          </div>
+      <div class="card  pet">
+        <img class="card-img-top" src="images/Amazon-parrots.jpg" alt="Card image" style="width:100%">
+        <div class="card-body">
+          <h4 class="card-title">Amazon Parrots</h4>
+          <a href="#" class="btn btn-primary" data-toggle="modal" data-target="#myModal">Adopt</a>
         </div>
-        <br>
-        
-
-        <div class="card  pet" >
-          <div class="card-body">
-            <h4 class="card-title">Canary</h4>
-            <a href="#" class="btn btn-primary" data-toggle="modal" data-target="#myModal">Adopt</a>
-          </div>
-          <img class="card-img-bottom" src="images/Canary.webp" alt="Card image" style="width:100%">
-        </div>
-      
+      </div>
       <br>
 
-     
-        <div class="card  pet" >
-          <img class="card-img-top" src="images/Conure.webp" alt="Card image" style="width:100%">
-          <div class="card-body">
-            <h4 class="card-title">Conure</h4>
-            <a href="#" class="btn btn-primary" data-toggle="modal" data-target="#myModal">Adopt</a>
-          </div>
+
+      <div class="card  pet">
+        <div class="card-body">
+          <h4 class="card-title">Canary</h4>
+          <a href="#" class="btn btn-primary" data-toggle="modal" data-target="#myModal">Adopt</a>
         </div>
-        <br>
+        <img class="card-img-bottom" src="images/Canary.webp" alt="Card image" style="width:100%">
+      </div>
 
-        <div class="card  pet" >
-            <div class="card-body">
-              <h4 class="card-title">Macaw Parrot</h4>
-              <a href="#" class="btn btn-primary" data-toggle="modal" data-target="#myModal">Adopt</a>
-            </div>
-            <img class="card-img-bottom" src="images/Macaw-Parrot.webp" alt="Card image" style="width:100%">
-          </div>
-        
-        <br>
+      <br>
+
+
+      <div class="card  pet">
+        <img class="card-img-top" src="images/Conure.webp" alt="Card image" style="width:100%">
+        <div class="card-body">
+          <h4 class="card-title">Conure</h4>
+          <a href="#" class="btn btn-primary" data-toggle="modal" data-target="#myModal">Adopt</a>
+        </div>
+      </div>
+      <br>
+
+      <div class="card  pet">
+        <div class="card-body">
+          <h4 class="card-title">Macaw Parrot</h4>
+          <a href="#" class="btn btn-primary" data-toggle="modal" data-target="#myModal">Adopt</a>
+        </div>
+        <img class="card-img-bottom" src="images/Macaw-Parrot.webp" alt="Card image" style="width:100%">
+      </div>
+
+      <br>
     </div>
-</div>
-<script>
-  
-  const buttons = document.querySelectorAll('.btn')
-  burger = document.querySelector('.burger');
-navbar = document.querySelector('.navbar');
-navLeft  = document.querySelector('.navLeft');
-navRight = document.querySelector('.navRight');
-burger.addEventListener('click',function(){
-    navRight.classList.toggle('v-class');
-    navLeft.classList.toggle('v-class');
-    navbar.classList.toggle('h-nav')
+  </div>
+  <script>
 
+    const buttons = document.querySelectorAll('.btn')
 
-})
-  buttons.forEach(function(currentBtn){
-  currentBtn.addEventListener('click', ()=>{
-    anim=currentBtn.parentElement.querySelector('.card-title');
-    // console.log(currentBtn.parentElement.parentElement.querySelector(".card-img-bottom").src);
-    document.getElementById("modalimg").src=currentBtn.parentElement.parentElement.querySelector("img").src;
-    document.getElementById("animal").innerHTML=anim.innerHTML;
+    buttons.forEach(function (currentBtn) {
+      currentBtn.addEventListener('click', () => {
+        anim = currentBtn.parentElement.querySelector('.card-title');
+        // console.log(currentBtn.parentElement.parentElement.querySelector(".card-img-bottom").src);
+        document.getElementById("modalimg").src = currentBtn.parentElement.parentElement.querySelector("img").src;
+        document.getElementById("animal").innerHTML = anim.innerHTML;
 
-    console.log(currentBtn.parentElement.querySelector('.card-title').innerHTML);})
-  
-})
-</script>
-    </body>
+        console.log(currentBtn.parentElement.querySelector('.card-title').innerHTML);
+      })
+
+    })
+  </script>
+</body>
+
 </html>
