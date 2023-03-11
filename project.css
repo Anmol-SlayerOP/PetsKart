@@ -34,7 +34,6 @@
     display: flex;
    
 }
-
 .navLeft ul li {
     padding: 15px;
     justify-content: space-around;
@@ -100,7 +99,9 @@
     padding-bottom: 4px;
     padding-left: 5px;
 }
-
+.hidee{
+    overflow: hidden;
+}
 .line {
     width: 35px;
     height: 6px;

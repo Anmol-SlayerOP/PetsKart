@@ -30,12 +30,12 @@
       href="https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap"
       rel="stylesheet"
     />
-    <title>HOME PAGE</title>
+    <title>PetsKart</title>
   </head>
 
   <body style="height: 100vh">
-    <div>
-      <nav class="navbar h-nav">
+    <div >
+      <nav class="navbar h-nav hidee">
         <div class="burger">
           <div class="line"></div>
           <div class="line"></div>
@@ -62,16 +62,19 @@
             id="search"
           />
           <button class="search">Search</button>
+          <button ><a style="color:white"href="login.html" target="screen">Login</a></button>
         </div>
       </nav>
     </div>
 
     <iframe
+
       name="screen"
       src="home.html"
       width="100%"
       height="100%"
       title="Iframe Example"
+      style="display:block"
     >
     </iframe>
 
@@ -84,6 +87,7 @@
         navRight.classList.toggle("v-class");
         navLeft.classList.toggle("v-class");
         navbar.classList.toggle("h-nav");
+        navbar.classList.toggle("hidee");
       });
     </script>
   </body>
