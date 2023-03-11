@@ -5,8 +5,7 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css/" > -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" />
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" />
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
     integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -18,6 +17,7 @@
       border-radius: 20%;
       font-family: 'PT Sans', sans-serif;
       text-align: center;
+      /* offset-x | offset-y | blur-radius | spread-radius | color */
       box-shadow: 0 0 5px rgba(0, 0, 0, 0.15);
       overflow: hidden;
       position: relative;
@@ -64,6 +64,7 @@
       font-style: italic;
       letter-spacing: 1px;
       text-transform: uppercase;
+      /* top | left and right | bottom */
       margin: 0 0 3px;
     }
 
@@ -81,6 +82,7 @@
     }
 
     .box .icon li {
+      /* top | right | bottom | left */
       margin: 0 5px 0 0;
       display: inline-block;
     }
@@ -136,8 +138,9 @@
     .bannerparent {
       height: 60vh;
       width: 100%;
+      /* now no need */
       position: relative;
-      margin-top: 50px;
+      margin-top: 0px;
     }
 
     .banner-content {
@@ -210,6 +213,7 @@
     }
 
     .skinWidth {
+      /* no use */
       margin: 0 Auto;
       width: 100%;
     }
@@ -234,13 +238,14 @@
     }
 
     .FooterSearchBarText .btn {
+      /* as bootstrap used no use of none border */
       border: none !important;
       font-weight: bold;
       padding-right: 60px;
       padding-left: 60px;
     }
 
-    /* Google Font CDN Link */
+    
     * {
       margin: 0;
       padding: 0;
@@ -280,7 +285,7 @@
       margin-top: 15px;
       position: relative;
     }
-
+   /* this is for the line */
     .content .left-side::before {
       content: '';
       position: absolute;
@@ -336,11 +341,13 @@
       height: 100%;
       width: 100%;
       border: none;
+      /* outline is line drawn outside border also */
       outline: none;
       font-size: 16px;
       background: #F0F1F8;
       border-radius: 6px;
       padding: 0 15px;
+      /* no use doesnt allows to resize a div; */
       resize: none;
 
     }
@@ -544,13 +551,19 @@
 
     @keyframes heartAnimation {
       0% {
-        /* top: 100%; */
+        opacity: 1;
+        /* top: 100%; */top: 93%;
       }
-
+      4%{
+        top: 93%;
+      }
       60% {
         opacity: .8;
       }
-
+      96%{
+        top: 1%;
+        opacity: 0;
+      }
       100% {
         top: 0%;
         opacity: 0;
@@ -596,13 +609,18 @@
       /* border-color: transparent; */
       box-shadow: 0 0 0 5px rgba(255, 255, 255, 0.5);
     }
+    @media screen and (max-width:380px) {
+      #messagedownbutton{
+        transform: scale(1);
+            }
+          }
   </style>
   <title>Document</title>
 </head>
 
 <body>
 
-  <!-- <a href="#containerconmessage" id="messagedownbutton" class="btn  btn-success btn-rounded"><i class="fa fa-envelope"></i></a> -->
+  <a href="#containerconmessage" id="messagedownbutton" class="btn  btn-success btn-rounded"><i class="fa fa-envelope"></i></a>
   <div class="main-aboutus">
     <div class="bannerparent">
       <div class="banner">
@@ -649,7 +667,7 @@
           </div>
           <div class="col-md-4 col-sm-6 mt-3">
             <div class="box">
-              <img src="images/kuldeep.png">
+              <img src="images/kuldeep.jpg">
               <div class="box-content">
                 <h3 class="title">Kuldeep Jhala</h3>
                 <span class="post">Web designer</span>
@@ -662,7 +680,7 @@
           </div>
           <div class="col-md-4 col-sm-6 mt-3">
             <div class="box">
-              <img src="images/Prashik.png">
+              <img src="images/Prashik.jpg">
               <div class="box-content">
                 <h3 class="title">Prashik Prage</h3>
                 <span class="post">Web designer</span>
@@ -805,7 +823,7 @@
       const formData = new FormData(form);
       e.preventDefault();
       var object = {};
-      console.log(FormData)
+      console.log(formData)
       formData.forEach((value, key) => {
         object[key] = value;
       });
@@ -822,19 +840,7 @@
         },
         body: json
       })
-        // .then(async (response) => {
-        //   let json = await response.json();
-        //   if (response.status == 200) {
-        //     result.innerHTML = json.message;
-        //     result.classList.remove("text-gray-500");
-        //     result.classList.add("text-green-500");
-        //   } else {
-        //     console.log(response);
-        //     result.innerHTML = json.message;
-        //     result.classList.remove("text-gray-500");
-        //     result.classList.add("text-red-500");
-        //   }
-        // })
+      
         .catch((error) => {
           console.log(error);
           result.innerHTML = "Something went wrong!";
